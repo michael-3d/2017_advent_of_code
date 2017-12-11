@@ -10,7 +10,11 @@ step_count = 0
 while True:
     try:
         new_i = i + step_list[i]
-        step_list[i] += 1
+        if step_list[i] >= 3:
+            mod = -1
+        else:
+            mod = 1
+        step_list[i] += mod
         i = new_i
         step_count += 1
     except IndexError as e:
